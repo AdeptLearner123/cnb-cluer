@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cnb-clue-generator"
+version = "0.1.0"
+description = ""
+authors = ["Nalu Zou"]
+readme = "README.md"
+packages = [{include = "cnb_clue_generator"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.scripts]
+add-scenarios   = "cnb_clue_generator.add_scenarios:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
