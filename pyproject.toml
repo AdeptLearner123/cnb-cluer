@@ -8,9 +8,14 @@ packages = [{include = "cnb_clue_generator"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+gensim = "^4.2.0"
+tqdm = "^4.64.1"
 
 [tool.poetry.scripts]
-add-scenarios   = "cnb_clue_generator.add_scenarios:main"
+generate-clues  = "cnb_clue_generator.generate_clues:main"
+evaluate-clues  = "cnb_clue_generator.evaluate_clues:main"
+
+test-gensim     = "tools.test_gensim:main"
 
 [build-system]
 requires = ["poetry-core"]
