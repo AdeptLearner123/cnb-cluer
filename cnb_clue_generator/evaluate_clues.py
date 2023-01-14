@@ -4,10 +4,11 @@ from config import SCENARIOS, GENERATED_CLUES, GUESSES
 import yaml
 import os
 import random
+from collections import defaultdict
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument("-f", type=str, required=True)
+    parser.add_argument("-f", nargs="+", required=True)
     args = parser.parse_args()
     return args.f
 
@@ -32,9 +33,7 @@ def prompt_guesses(clue, scenario):
     return guessed_words
 
 
-def evaluate_clue(scenario_id, clues, scenarios, guesses):
-    clue = clues[scenario_id]
-
+def evaluate_clue(scenario_id, clue, scenarios, guesses):
     if scenario_id not in guesses:
         guesses[scenario_id] = dict()
     scenario_guesses = guesses[scenario_id]
@@ -49,11 +48,14 @@ def evaluate_clue(scenario_id, clues, scenarios, guesses):
 
 
 def main():
-    file_name = parse_args()
-    file_path = os.path.join(GENERATED_CLUES, f"{file_name}.yaml")
+    file_names = parse_args()
+    file_paths = [ os.path.join(GENERATED_CLUES, f"{file_name}.yaml") for file_name in file_names ]
+    scenario_clues = defaultdict(lambda: [])
 
-    with open(file_path, "r") as file:
-        clues = yaml.safe_load(file.read())
+    for file_path in file_paths:
+        with open(file_path, "r") as file:
+            for scenario_id, clue in yaml.safe_load(file.read()).items():
+                scenario_clues[scenario_id].append(clue)
     
     with open(SCENARIOS, "r") as file:
         scenarios = yaml.safe_load(file.read())
@@ -67,9 +69,7 @@ def main():
     correct = 0
     for i, scenario_id in enumerate(scenarios):
         print("Scenario", i)
-        good_clue = evaluate_clue(scenario_id, clues, scenarios, guesses)
-
-        if good_clue:
+        if any([ evaluate_clue(scenario_id, clue, scenarios, guesses) for clue in scenario_clues[scenario_id] ]):
             correct += 1
     
     print(f"Accuracy: {correct} / {len(scenarios)} = {correct / len(scenarios)}")
