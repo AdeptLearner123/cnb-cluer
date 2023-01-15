@@ -16,6 +16,7 @@ generate-clues  = "cnb_clue_generator.generate_clues:main"
 evaluate-clues  = "cnb_clue_generator.evaluate_clues:main"
 
 test-gensim     = "tools.test_gensim:main"
+label-types     = "tools.label_types:main"
 
 [build-system]
 requires = ["poetry-core"]

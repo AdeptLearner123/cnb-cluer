@@ -1,10 +1,10 @@
 from argparse import ArgumentParser
 
-from config import SCENARIOS, GENERATED_CLUES, GUESSES
+from config import SCENARIOS, GENERATED_CLUES, GUESSES, SCENARIOS_DATA
 import yaml
 import os
 import random
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 def parse_args():
     parser = ArgumentParser()
@@ -60,19 +60,35 @@ def main():
     with open(SCENARIOS, "r") as file:
         scenarios = yaml.safe_load(file.read())
     
+    with open(SCENARIOS_DATA, "r") as file:
+        scenarios_data = yaml.safe_load(file.read())
+
     with open(GUESSES, "r") as file:
         guesses = yaml.safe_load(file.read())
     
     if guesses is None:
         guesses = dict()
 
-    correct = 0
+    corrects = Counter()
+    totals = Counter()
     for i, scenario_id in enumerate(scenarios):
         print("Scenario", i)
+
+        keys = ["all"]
+        if scenarios_data[scenario_id]["is_easy"]:
+            keys.append("easy")
+        else:
+            keys.append("hard")
+
         if any([ evaluate_clue(scenario_id, clue, scenarios, guesses) for clue in scenario_clues[scenario_id] ]):
-            correct += 1
-    
-    print(f"Accuracy: {correct} / {len(scenarios)} = {correct / len(scenarios)}")
+            for key in keys:
+                corrects[key] += 1
+        
+        for key in keys:
+            totals[key] += 1
+
+    for key in corrects:
+        print(f"{key}: {corrects[key]} / {totals[key]} = {corrects[key] / totals[key]}")
 
 
 if __name__ == "__main__":
