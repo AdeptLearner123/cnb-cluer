@@ -13,7 +13,9 @@ tqdm = "^4.64.1"
 
 [tool.poetry.scripts]
 generate-clues  = "cnb_clue_generator.generate_clues:main"
+generate-guesses = "cnb_clue_generator.generate_guesses:main"
 evaluate-clues  = "cnb_clue_generator.evaluate_clues:main"
+evaluate-guesses    = "cnb_clue_generator.evaluate_guesses:main"
 
 test-gensim     = "tools.test_gensim:main"
 label-types     = "tools.label_types:main"

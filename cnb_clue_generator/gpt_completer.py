@@ -1,9 +1,7 @@
-from .clue_generator_base import ClueGeneratorBase
-
 import openai
 import time
 
-class GPTClueGeneratorBase(ClueGeneratorBase):
+class GPTCompleter:
 
     def __init__(self):
         self._prompt_tokens = 0
@@ -29,7 +27,7 @@ class GPTClueGeneratorBase(ClueGeneratorBase):
 
 
     def _get_completion(self, prompt):
-        completion = openai.Completion.create(engine="text-davinci-003", prompt=prompt, temperature=0, top_p=0, max_tokens=256)
+        completion = openai.Completion.create(engine="text-davinci-003", prompt=prompt, temperature=0, top_p=1, max_tokens=256)
         self._update_usage(completion.usage)
-        time.sleep(2)
+        time.sleep(1)
         return completion.choices[0].text

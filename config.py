@@ -1,4 +1,6 @@
 SCENARIOS = "data/scenarios.yaml"
 SCENARIOS_DATA = "data/scenario_data.yaml"
 GENERATED_CLUES = "generated_clues"
-GUESSES = "data/guesses.yaml"
+GENERATED_GUESSES = "guesses/"
+GENERATED_GUESSES_NOTES = "guesses/notes/"
+GENERATED_CLUE_GUESSES = "data/guesses.yaml"

@@ -31,7 +31,7 @@ class VectorClueGenerator(ClueGeneratorBase):
         return self._keyed_vectors.similarity(word1, word2)
 
 
-class Word2VecGlueGenerator(VectorClueGenerator):
+class Word2VecClueGenerator(VectorClueGenerator):
     def __init__(self):
         super().__init__("word2vec-google-news-300")
 

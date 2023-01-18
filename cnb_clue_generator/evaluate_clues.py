@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from config import SCENARIOS, GENERATED_CLUES, GUESSES, SCENARIOS_DATA
+from config import SCENARIOS, GENERATED_CLUES, GENERATED_CLUE_GUESSES, SCENARIOS_DATA
 import yaml
 import os
 import random
@@ -40,7 +40,7 @@ def evaluate_clue(scenario_id, clue, scenarios, guesses):
     
     if clue not in scenario_guesses:
         scenario_guesses[clue] = prompt_guesses(clue, scenarios[scenario_id])
-        with open(GUESSES, "w+") as file:
+        with open(GENERATED_CLUE_GUESSES, "w+") as file:
             file.write(yaml.dump(guesses, default_flow_style=None))
     
     guessed_words = scenario_guesses[clue]
@@ -63,7 +63,7 @@ def main():
     with open(SCENARIOS_DATA, "r") as file:
         scenarios_data = yaml.safe_load(file.read())
 
-    with open(GUESSES, "r") as file:
+    with open(GENERATED_CLUE_GUESSES, "r") as file:
         guesses = yaml.safe_load(file.read())
     
     if guesses is None:

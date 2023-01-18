@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 from tqdm import tqdm
 import os
 
-from .utils import get_model
+from .utils import get_clue_giver
 from config import SCENARIOS, GENERATED_CLUES
 import yaml
 
@@ -16,7 +16,7 @@ def parse_args():
 
 def main():
     model_name = parse_args()
-    model = get_model(model_name)
+    model = get_clue_giver(model_name)
 
     output_path = os.path.join(GENERATED_CLUES, f"{model_name}_clues.yaml")
 
