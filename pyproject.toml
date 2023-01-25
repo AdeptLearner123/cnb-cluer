@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "cnb-clue-generator"
+name = "cnb-cluer"
 version = "0.1.0"
 description = ""
 authors = ["Nalu Zou"]
 readme = "README.md"
-packages = [{include = "cnb_clue_generator"}]
+packages = [{include = "cnb_cluer"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -12,7 +12,7 @@ gensim = "^4.2.0"
 tqdm = "^4.64.1"
 
 [tool.poetry.scripts]
-generate-clues  = "cnb_clue_generator.generate_clues:main"
+generate-clues  = "cnb_cluer.generate_clues:main"
 generate-guesses = "cnb_clue_generator.generate_guesses:main"
 evaluate-clues  = "cnb_clue_generator.evaluate_clues:main"
 evaluate-guesses    = "cnb_clue_generator.evaluate_guesses:main"

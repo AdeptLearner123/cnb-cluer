@@ -37,5 +37,4 @@ def main():
         with open(output_path, "w+") as file:
             file.write(yaml.dump(clues))
         
-
     model.print_usage()
