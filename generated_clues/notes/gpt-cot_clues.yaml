@@ -1,0 +1,239 @@
+182d98a0-ff78-433e-ac8e-c3b8da9c4f5b:
+  completion: ' Post'
+  prompt: 'Give a single-word clue that is related to BOX, MAIL but not TIE, LINK,
+    CAR, FIGURE, SWING, JET:
+
+
+    Let''s think about this step by step.
+
+
+    The first two words are BOX and MAIL. These two words are related to the concept
+    of sending and receiving items. The other words, TIE, LINK, CAR, FIGURE, SWING,
+    and JET, are not related to this concept.
+
+
+    The single-word clue that is related to BOX and MAIL but not the other words is
+    "post".
+
+
+    Clue:'
+2a5b101f-4258-491b-9a69-d86043b2497e:
+  completion: ' Seat'
+  prompt: 'Give a single-word clue that is related to CHAIR, WALL but not IVORY, MICROSCOPE,
+    COVER, MOUTH, HEAD, PYRAMID:
+
+
+    Let''s think about this step by step.
+
+
+    The first two words are chair and wall. The other words are not related to the
+    first two, so we can eliminate them.
+
+
+    The single-word clue that is related to chair and wall is "seat".
+
+
+    Clue:'
+2f2aaf41-2de3-4df7-bd7a-e599c0c22ebe:
+  completion: ' Legal'
+  prompt: 'Give a single-word clue that is related to LAWYER, CONTRACT but not OPERA,
+    EGYPT, ROULETTE, TRIANGLE, STICK, SKYSCRAPER:
+
+
+    Let''s think about this step by step.
+
+
+    Lawyer and contract are related to legal matters, so the single-word clue could
+    be "legal".
+
+
+    Clue:'
+34c4ad20-d46a-4258-aee4-ed7505e8500d:
+  completion: ' CAR'
+  prompt: 'Give a single-word clue that is related to ENGINE, CRASH but not WATER,
+    HOSPITAL, NOVEL, COPPER, DINOSAUR, GLOVE:
+
+
+    Let''s think about this step by step.
+
+
+    Engine and crash are related to the concept of transportation, so a single-word
+    clue related to these two words could be "CAR".
+
+
+    Clue:'
+3da6de54-6aa9-4ef9-9120-5f4a0b69c073:
+  completion: ' HEEL'
+  prompt: 'Give a single-word clue that is related to DRESS, SHOE but not FIRE, PILOT,
+    BOW, NAIL, PLANE, BUTTON:
+
+
+    Let''s think about this step by step.
+
+
+    The first two words are dress and shoe, so the clue could be related to clothing
+    or footwear. Fire, pilot, bow, nail, plane, and button are all unrelated to clothing
+    or footwear, so the clue should be something else.
+
+
+    The single-word clue could be "HEEL".
+
+
+    Clue:'
+491c0374-59d7-49f9-8e22-61e4cdd42090:
+  completion: ' Music'
+  prompt: 'Give a single-word clue that is related to STRING, CONCERT but not TRIP,
+    SHOP, FISH, LOCH NESS, HAWK, WATCH:
+
+
+    Let''s think about this step by step.
+
+
+    String: Instrument
+
+    Concert: Performance
+
+    Trip: Journey
+
+    Shop: Store
+
+    Fish: Animal
+
+    Loch Ness: Lake
+
+    Hawk: Bird
+
+    Watch: Timepiece
+
+
+    The single-word clue that is related to String, Concert but not Trip, Shop, Fish,
+    Loch Ness, Hawk, Watch is: Music.
+
+
+    Clue:'
+54a29e40-b210-43d9-a86a-74986edc792f:
+  completion: ' LEAF'
+  prompt: 'Give a single-word clue that is related to FALL, MAPLE but not DRAGON,
+    BAT, POISON, KNIFE, RABBIT, CHARGE:
+
+
+    Let''s think about this step by step.
+
+
+    The first two words are FALL and MAPLE. These two words are related to the season
+    of autumn, when the leaves of maple trees change color and fall from the trees.
+
+
+    The words DRAGON, BAT, POISON, KNIFE, RABBIT, and CHARGE are not related to FALL
+    and MAPLE.
+
+
+    The single-word clue that is related to FALL and MAPLE but not the other words
+    is LEAF.
+
+
+    Clue:'
+60de06f4-b7dd-454a-8f5f-28a62f5f59f7:
+  completion: ' Country'
+  prompt: 'Give a single-word clue that is related to GREECE, FRANCE but not BOTTLE,
+    MASS, SPELL, DECK, WALL, TIE:
+
+
+    Let''s think about this step by step.
+
+
+    Greece and France are both countries, so a single-word clue related to them could
+    be "country."
+
+
+    Clue:'
+8067c153-b4ef-453e-9da3-a70d93181303:
+  completion: ' Animal'
+  prompt: 'Give a single-word clue that is related to TICK, MOUSE but not CHURCH,
+    FIGHTER, BATTERY, CAP, WASHINGTON, GAME:
+
+
+    Let''s think about this step by step.
+
+
+    Tick and mouse are both animals, so the single-word clue could be "animal".
+
+
+    Clue:'
+b933d451-56f0-4392-895e-d8098a29a49f:
+  completion: ' TREE'
+  prompt: 'Give a single-word clue that is related to FOREST, ROOT but not TRAIN,
+    FIGURE, PARACHUTE, LIFE, SUPERHERO, BALL:
+
+
+    Let''s think about this step by step.
+
+
+    The first two words are related to a forest, so the clue could be something related
+    to a forest. The third word is not related to a train, figure, parachute, life,
+    superhero, or ball, so the clue could be something related to a forest that is
+    not related to any of those things.
+
+
+    The answer could be "TREE."
+
+
+    Clue:'
+cfbf7872-b4cd-4623-aac4-f04cb27cebb9:
+  completion: ' Extract'
+  prompt: 'Give a single-word clue that is related to OIL, DRILL but not STAFF, COMPOUND,
+    COMIC, POLE, CAP, EAGLE:
+
+
+    Let''s think about this step by step.
+
+
+    Oil and drill are related to the extraction of oil, so the single-word clue could
+    be "extract".
+
+
+    Clue:'
+de0c64e4-7e0b-4e0e-963c-7785eb8cdaab:
+  completion: ' Freeze'
+  prompt: 'Give a single-word clue that is related to SNOW, BOTTLE but not SCREEN,
+    HORN, LEPRECHAUN, CENTAUR, ANTARCTICA, CELL:
+
+
+    Let''s think about this step by step.
+
+
+    Snow and bottle are both related to the concept of "cold," so a single-word clue
+    related to both of these could be "freeze."
+
+
+    Clue:'
+e80ef352-b4cc-4714-98da-c86815956ef0:
+  completion: ' Animal'
+  prompt: 'Give a single-word clue that is related to CRANE, VET but not DRAGON, ROCK,
+    TAP, HOLE, SHAKESPEARE, FILE:
+
+
+    Let''s think about this step by step.
+
+
+    The words CRANE and VET are related because they both involve animals. The words
+    DRAGON, ROCK, TAP, HOLE, and SHAKESPEARE are not related to animals, so they can
+    be eliminated. The word FILE is related to paperwork, so the single-word clue
+    that is related to CRANE and VET but not to the other words is "animal."
+
+
+    Clue:'
+fba8f593-3590-480f-b1ce-dbd391529172:
+  completion: ' Planet or Element'
+  prompt: 'Give a single-word clue that is related to MERCURY, FIRE but not SUB, FENCE,
+    BEAT, SUPERHERO, POOL, NOVEL:
+
+
+    Let''s think about this step by step.
+
+
+    The first two words are related to Mercury and Fire. Mercury is a planet and Fire
+    is an element. So, the single-word clue could be "planet" or "element".
+
+
+    Clue:'

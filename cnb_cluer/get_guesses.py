@@ -8,9 +8,10 @@ from collections import defaultdict, Counter
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument("-f", nargs="+", required=True)
+    parser.add_argument("-f", required=True)
+    parser.add_argument("-r", action="store_true")
     args = parser.parse_args()
-    return args.f
+    return args.f, args.r
 
 
 def prompt_guesses(clue, scenario):
@@ -48,14 +49,13 @@ def evaluate_clue(scenario_id, clue, scenarios, guesses):
 
 
 def main():
-    file_names = parse_args()
-    file_paths = [ os.path.join(GENERATED_CLUES, f"{file_name}.yaml") for file_name in file_names ]
+    file_name, review = parse_args()
+    file_path = os.path.join(GENERATED_CLUES, f"{file_name}.yaml")
     scenario_clues = defaultdict(lambda: [])
 
-    for file_path in file_paths:
-        with open(file_path, "r") as file:
-            for scenario_id, clue in yaml.safe_load(file.read()).items():
-                scenario_clues[scenario_id].append(clue)
+    with open(file_path, "r") as file:
+        for scenario_id, clue in yaml.safe_load(file.read()).items():
+            scenario_clues[scenario_id].append(clue)
     
     with open(SCENARIOS, "r") as file:
         scenarios = yaml.safe_load(file.read())
@@ -71,6 +71,7 @@ def main():
 
     corrects = Counter()
     totals = Counter()
+    incorrects = []
     for i, scenario_id in enumerate(scenarios):
         print("Scenario", i)
 
@@ -80,15 +81,24 @@ def main():
         else:
             keys.append("hard")
 
-        if any([ evaluate_clue(scenario_id, clue, scenarios, guesses) for clue in scenario_clues[scenario_id] ]):
+        if evaluate_clue(scenario_id, clue, scenarios, guesses):
             for key in keys:
                 corrects[key] += 1
+        else:
+            scenario = scenarios[scenario_id]
+            incorrects.append({
+                "pos": scenario["pos"],
+                "clue": scenario_clues[scenario_id]
+            })
         
         for key in keys:
             totals[key] += 1
 
     for key in corrects:
         print(f"{key}: {corrects[key]} / {totals[key]} = {corrects[key] / totals[key]}")
+    
+    if review:
+        print(yaml.dump(incorrects, default_flow_style=None))
 
 
 if __name__ == "__main__":

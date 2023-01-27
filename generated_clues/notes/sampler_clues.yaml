@@ -1,0 +1,64 @@
+0542c82f-e431-4f00-978a-c3040c9fa1bd:
+  ANIMAL:
+    guesses:
+    - - HAWK
+      - SCORPION
+    - - BAT
+      - HAWK
+    - - SCORPION
+      - HAWK
+    - - BAT
+      - HAWK
+    - - HAWK
+      - BAT
+    votes:
+      AMERICA: 0
+      BAT: 3
+      HAWK: 5
+      POISON: 0
+      SCALE: 0
+      SCORPION: 2
+      SHOT: 0
+      TOWER: 0
+  PREDATOR:
+    guesses:
+    - - HAWK
+      - SCORPION
+    - - HAWK
+      - SCORPION
+    - - HAWK
+      - SCORPION
+    - - HAWK
+      - SHOT
+    - - BAT
+      - HAWK
+    votes:
+      AMERICA: 0
+      BAT: 1
+      HAWK: 5
+      POISON: 0
+      SCALE: 0
+      SCORPION: 3
+      SHOT: 1
+      TOWER: 0
+  ZAH:
+    guesses:
+    - - BAT
+      - HAWK
+    - - HAWK
+      - BAT
+    - - HAWK
+      - SCORPION
+    - - HAWK
+      - BAT
+    - - HAWK
+      - SCORPION
+    votes:
+      AMERICA: 0
+      BAT: 3
+      HAWK: 5
+      POISON: 0
+      SCALE: 0
+      SCORPION: 2
+      SHOT: 0
+      TOWER: 0

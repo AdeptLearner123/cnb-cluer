@@ -21,13 +21,13 @@ class GPTCompleter:
         self._completions += 1
 
 
-    def print_usage(self):
-        print({
+    def get_usage(self):
+        return {
             "completions": self._completions,
             "prompt tokens": self._prompt_tokens, 
             "completion tokens": self._completion_tokens,
             "total tokens": self._total_tokens
-        })
+        }
 
 
     def clear_history(self):
@@ -48,3 +48,16 @@ class GPTCompleter:
             "completion": completion_text.strip()
         })
         return completion_text
+    
+
+    def _get_completions(self, prompt, num):
+        completion = openai.Completion.create(engine="text-davinci-003", prompt=prompt, temperature=0.7, top_p=1, n=num, max_tokens=256)
+        self._update_usage(completion.usage)
+        time.sleep(1)
+
+        completions = [ choice.text for choice in completion.choices ]
+        self._history.append({
+            "prompt": prompt,
+            "completions": completions
+        })
+        return completions

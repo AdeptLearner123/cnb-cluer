@@ -4,7 +4,7 @@ from tqdm import tqdm
 import os
 
 from .utils import get_clue_giver
-from config import SCENARIOS, GENERATED_CLUES
+from config import SCENARIOS, GENERATED_CLUES, GENERATED_CLUES_NOTES
 import yaml
 
 def parse_args():
@@ -19,6 +19,7 @@ def main():
     model = get_clue_giver(model_name)
 
     output_path = os.path.join(GENERATED_CLUES, f"{model_name}_clues.yaml")
+    notes_path = os.path.join(GENERATED_CLUES_NOTES, f"{model_name}_clues.yaml")
 
     with open(SCENARIOS, "r") as file:
         scenarios = yaml.safe_load(file.read())
@@ -28,13 +29,23 @@ def main():
         with open(output_path, "r") as file:
             clues = yaml.safe_load(file.read())
 
-    missing_scenarios = set(scenarios.keys()) - set(clues.keys())
+    scenario_notes = dict()
+    if os.path.exists(notes_path):
+        with open(notes_path, "r") as file:
+            scenario_notes = yaml.safe_load(file.read())
+
+    missing_scenarios = [ scenario_id for scenario_id in scenarios if scenario_id not in clues ]
 
     for key in tqdm(missing_scenarios):
-        clue = model.generate_clue(scenarios[key]["pos"], scenarios[key]["neg"])
+        clue, notes = model.generate_clue(scenarios[key]["pos"], scenarios[key]["neg"])
         clues[key] = clue
+        scenario_notes[key] = notes
 
         with open(output_path, "w+") as file:
             file.write(yaml.dump(clues))
         
-    model.print_usage()
+        with open(notes_path, "w+") as file:
+            file.write(yaml.dump(scenario_notes, default_style=None))        
+        
+        print(model.get_usage())
+        break

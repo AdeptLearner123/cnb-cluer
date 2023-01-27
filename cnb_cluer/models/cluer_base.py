@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
 
-class ClueGeneratorBase(ABC):
+class Cluer(ABC):
     @abstractmethod
     def generate_clue(self, pos_words, neg_words):
         pass
     
 
-    def print_usage(self):
-        print("No usage")
+    def get_usage(self):
+        return {}
     
     
     def _is_valid_clue(self, clue, pos_words):

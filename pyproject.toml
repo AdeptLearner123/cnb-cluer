@@ -10,12 +10,13 @@ packages = [{include = "cnb_cluer"}]
 python = "^3.10"
 gensim = "^4.2.0"
 tqdm = "^4.64.1"
+openai = "^0.26.2"
+PyYAML = "^6.0"
 
 [tool.poetry.scripts]
 generate-clues  = "cnb_cluer.generate_clues:main"
-generate-guesses = "cnb_clue_generator.generate_guesses:main"
-evaluate-clues  = "cnb_clue_generator.evaluate_clues:main"
-evaluate-guesses    = "cnb_clue_generator.evaluate_guesses:main"
+get-guesses  = "cnb_cluer.get_guesses:main"
+evaluate-combos = "cnb_cluer.evaluate_combos:main"
 
 test-gensim     = "tools.test_gensim:main"
 label-types     = "tools.label_types:main"
